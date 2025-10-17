@@ -13,8 +13,8 @@ public class Main {
     private static final Logger log = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        String login = "bob";
         AuthenticationService authenticationService = new AuthenticationServiceImpl();
+        String login = "bob";
         User user;
         try {
             user = authenticationService.login(login, "1234");
