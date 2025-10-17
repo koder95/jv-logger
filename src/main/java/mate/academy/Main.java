@@ -13,12 +13,13 @@ public class Main {
     private static final Logger log = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
+        String login = "bob";
         AuthenticationService authenticationService = new AuthenticationServiceImpl();
         User user;
         try {
-            user = authenticationService.login("bob", "1234");
+            user = authenticationService.login(login, "1234");
         } catch (AuthenticationException e) {
-            log.error(e);
+            log.error("Authentication failed: {}", login, e);
             return;
         }
         OrderService orderService = new OrderServiceImpl();
